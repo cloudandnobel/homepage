@@ -1,8 +1,8 @@
 //> Reducers
 // Authentication
 import authReducer from "./authReducer";
-// Shopify
-import shopifyReducer from "./shopifyReducer";
+// Shop
+//import spreadshirtReducer from "./spreadshirtReducer";
 
 //> Redux
 import { combineReducers } from "redux";
@@ -18,8 +18,8 @@ const rootReducer = combineReducers({
   firebase: firebaseReducer,
   /* Authentication */
   auth: authReducer,
-  /* Shopify */
-  shop: shopifyReducer,
+  /* Spreadshirt */
+  //shop: spreadshirtReducer,
 });
 
 export default rootReducer;

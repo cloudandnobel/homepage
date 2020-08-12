@@ -9,7 +9,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 // Connect
 import { connect } from "react-redux";
 // Actions
-import { initShopify } from "./store/actions/shopifyActions";
 import { checkCookies } from "./store/actions/analyticsActions";
 
 //> Components
@@ -30,8 +29,6 @@ class App extends React.Component {
   state = {};
 
   componentDidMount = () => {
-    // Initialize Shopify
-    this.props.initShopify();
     // Initialize analytics
     this.props.checkCookies();
   };
@@ -45,12 +42,12 @@ class App extends React.Component {
       <Router basename={process.env.PUBLIC_URL}>
         <ScrollToTop>
           <div className="flyout">
-            <Navbar />
-            <main>
+            {/*<Navbar />*/}
+            <main className="h-100">
               <Routes />
-              <CookieModal saveCookie={this.saveCookie} />
+              {/*<CookieModal saveCookie={this.saveCookie} />*/}
             </main>
-            <Footer />
+            {/*<Footer />*/}
           </div>
         </ScrollToTop>
       </Router>
@@ -62,13 +59,12 @@ class App extends React.Component {
 //#region > Functions
 const mapStateToProps = (state) => {
   return {
-    checkout: state.shop.checkout,
+    //checkout: state.shop.checkout,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    initShopify: () => dispatch(initShopify()),
     checkCookies: () => dispatch(checkCookies()),
   };
 };
